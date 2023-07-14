@@ -8,7 +8,7 @@ class BestSellerListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0, top: 8),
+      padding: const EdgeInsets.only(right: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
