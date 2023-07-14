@@ -13,7 +13,7 @@ class BestSellerListItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-              width: MediaQuery.of(context).size.height * .13,
+              width: 100,
               child: AspectRatio(
                   aspectRatio: 2 / 3,
                   child: Container(
@@ -33,15 +33,14 @@ class BestSellerListItem extends StatelessWidget {
               children: [
                 const Text(
                   'The Jungle Book',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: Styles.bookTitle,
                 ),
                 const SizedBox(height: 8),
                 const Text(
                   'Rudyard Kipling',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w500),
+                  style: Styles.textStyle16,
                 ),
                 const SizedBox(height: 8),
                 Row(
@@ -49,7 +48,7 @@ class BestSellerListItem extends StatelessWidget {
                     const Text(
                       '19.99 \$',
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                      Styles.textStyle20,
                     ),
                     const Spacer(),
                     Row(
@@ -60,14 +59,14 @@ class BestSellerListItem extends StatelessWidget {
                         ),
                         Text(
                           '4.8',
-                          style: TextStyle(fontSize: 20),
+                          style: Styles.textStyle20,
                         ),
                         SizedBox(
                           width: 9,
                         ),
                         Text(
                           '(2390)',
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style: Styles.textStyle16,
                         ),
                       ],
                     )
