@@ -10,7 +10,7 @@ class BestSellerListView extends StatelessWidget {
         // when using custom scroll view
         // u need to make that shrink wrap and not Expanded this to tell him take a space
         // of your items
-              //shrinkWrap: true,
+        shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         // and now u cant make it scroll and the custom also scroll so use physics
         padding: EdgeInsets.zero,
