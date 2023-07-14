@@ -1,8 +1,7 @@
-import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/feature/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -13,8 +12,8 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-
   late AnimationController animationController;
+
   //to control the animation value as the animationController is get value from 0 - 1
   late Animation<Offset> slidingAnimation;
 
@@ -24,8 +23,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initSliderAnimation();
     navigateToHome();
   }
-
-
 
   @override
   void dispose() {
@@ -68,8 +65,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   navigateToHome() {
-    Future.delayed(const Duration(seconds: 4) , (){
-      Get.to(() => const HomeView() , transition: Transition.fade , duration: kTranstionDuration) ;
-    } );
+    Future.delayed(const Duration(seconds: 4), () {
+      // Get.to(() => const HomeView(),
+      //     transition: Transition.fade, duration: kTranstionDuration);
+
+    GoRouter.of(context).pushReplacement(AppRoutes.kHomeView);
+
+    });
   }
 }
