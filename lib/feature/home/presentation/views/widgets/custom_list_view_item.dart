@@ -10,7 +10,7 @@ class CustomListViewItem extends StatelessWidget {
       aspectRatio: 3/4,
       child: Container(
         decoration:  BoxDecoration(
-          //color: Colors.red,
+          color: Colors.red,
             borderRadius: BorderRadius.circular(20),
             image:  const DecorationImage(
               fit: BoxFit.fill,

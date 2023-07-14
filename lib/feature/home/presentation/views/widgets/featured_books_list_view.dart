@@ -7,11 +7,14 @@ class FeaturedBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.width * .65,
+      height: MediaQuery.of(context).size.width * .55,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const CustomListViewItem();
+            return const Padding(
+              padding: EdgeInsets.only(right: 16.0),
+              child: CustomListViewItem(),
+            );
           }),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:bookly/core/utils/Styles.dart';
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerListItem extends StatelessWidget {
   const BestSellerListItem({super.key});
@@ -9,7 +11,7 @@ class BestSellerListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-
+        GoRouter.of(context).push(AppRoutes.kBookDetail);
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 16.0),
@@ -17,18 +19,19 @@ class BestSellerListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-                width: 100,
+                width: 90,
                 child: AspectRatio(
                     aspectRatio: 2 / 3,
                     child: Container(
                       decoration: BoxDecoration(
+                        color: Colors.red,
                           borderRadius: BorderRadius.circular(20),
                           image: const DecorationImage(
                               fit: BoxFit.fill,
                               image: AssetImage(AssetsPaths.book1))),
                     ))),
             const SizedBox(
-              width: 10,
+              width: 15,
             ),
             Expanded(
               child: Column(
@@ -36,7 +39,7 @@ class BestSellerListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    'The Jungle Book',
+                    'The Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Book',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.bookTitle,

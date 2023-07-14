@@ -6,7 +6,7 @@ abstract class Styles {
       TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
 
   static const bookTitle = TextStyle(
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: FontWeight.w600,
   );
 
