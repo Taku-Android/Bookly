@@ -28,7 +28,7 @@ class BookDetailViewBody extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.red,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(16),
                     image: const DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage(AssetsPaths.book1),
@@ -42,13 +42,27 @@ class BookDetailViewBody extends StatelessWidget {
           padding: EdgeInsets.only(top: 30.0, bottom: 45),
           child: BuyContainer(),
         ),
-      
-        const Text('You can also like' , style: Styles.textStyle16White)
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: const [
+            Padding(
+              padding: EdgeInsets.only(left: 30.0),
+              child: Text('You can also like' , style: Styles.textStyle16White),
+            ),
+          ],
+        ),
+
+
 
 
       ],
     );
   }
 }
+
+
+
+
 
 
