@@ -22,23 +22,21 @@ class BookDetailTitle extends StatelessWidget {
         const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
-            const Icon(
+          children:  const [
+            Icon(
               Icons.star,
               color: Colors.yellow,
               size: 20,
             ),
-            const SizedBox(width: 6,),
+            SizedBox(width: 6,),
             Text(
               '4.8',
-              style: Styles.textStyle16.copyWith(
-                  color: Colors.white
-              ),
+              style: Styles.textStyle16White
             ),
-            const SizedBox(
+            SizedBox(
               width: 9,
             ),
-            const Text(
+            Text(
               '(2390)',
               style: Styles.textStyle16,
             ),
