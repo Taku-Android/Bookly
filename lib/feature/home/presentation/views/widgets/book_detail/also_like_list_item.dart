@@ -7,7 +7,7 @@ class AlsoLikeListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0 , bottom: 20),
+      padding: const EdgeInsets.only(top: 16.0 , bottom: 20 , right: 10),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * .20,
         child: AspectRatio(

@@ -1,6 +1,7 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/Styles.dart';
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/book_detail/also_like_list_view.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/book_detail_title.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/buy_container.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/custom_detail_view_app_bar.dart';
@@ -53,13 +54,15 @@ class BookDetailViewBody extends StatelessWidget {
           ],
         ),
 
-
+        AlsoLikeListView(),
 
 
       ],
     );
   }
 }
+
+
 
 
 
