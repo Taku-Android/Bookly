@@ -28,9 +28,15 @@ class BookDetailViewBody extends StatelessWidget {
           ),
         ),
         const BookDetailTitle(),
-        const Padding(
-          padding: EdgeInsets.only(top: 30.0, bottom: 45),
-          child: BuyContainer(),
+         Padding(
+          padding: const EdgeInsets.only(top: 30.0, bottom: 45),
+          child: BuyContainer(onPriceTap: (){
+
+          },
+          onPreviewTap: (){
+
+          },
+          ),
         ),
 
         Row(

@@ -1,6 +1,6 @@
 import 'package:bookly/core/utils/Styles.dart';
 import 'package:bookly/core/utils/app_routes.dart';
-import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/custom_small_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,18 +18,9 @@ class BestSellerListItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
                 width: 90,
-                child: AspectRatio(
-                    aspectRatio: 2 / 3,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(AssetsPaths.book1))),
-                    ))),
+                child: CustomSmallImage()),
             const SizedBox(
               width: 15,
             ),
@@ -48,6 +39,7 @@ class BestSellerListItem extends StatelessWidget {
                   const Text(
                     'Rudyard Kipling',
                     style: Styles.textStyle16,
+
                   ),
                   const SizedBox(height: 8),
                   Row(

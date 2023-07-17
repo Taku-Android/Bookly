@@ -1,5 +1,5 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import '../custom_small_image.dart';
 
 class AlsoLikeListItem extends StatelessWidget {
   const AlsoLikeListItem({super.key});
@@ -10,19 +10,9 @@ class AlsoLikeListItem extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0 , bottom: 20 , right: 10),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * .20,
-        child: AspectRatio(
-          aspectRatio: 3 / 4,
-          child: Container(
-            decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsPaths.book1),
-                )),
-          ),
-        ),
+        child: const CustomSmallImage(),
       ),
     );
   }
 }
+
