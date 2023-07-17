@@ -17,7 +17,9 @@ class BookDetailViewBody extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.only(
-              left: kPrimaryPadding, right: kPrimaryPadding, ),
+            left: kPrimaryPadding,
+            right: kPrimaryPadding,
+          ),
           child: CustomDetailViewAppBar(),
         ),
         Padding(
@@ -28,39 +30,29 @@ class BookDetailViewBody extends StatelessWidget {
           ),
         ),
         const BookDetailTitle(),
-         Padding(
-          padding: const EdgeInsets.only(top: 30.0, bottom: 45),
-          child: BuyContainer(onPriceTap: (){
-
-          },
-          onPreviewTap: (){
-
-          },
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 30.0,
+          ),
+          child: BuyContainer(
+            onPriceTap: () {},
+            onPreviewTap: () {},
           ),
         ),
-
+        const SizedBox(
+          height: 40,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
             Padding(
               padding: EdgeInsets.only(left: 30.0),
-              child: Text('You can also like' , style: Styles.textStyle16White),
+              child: Text('You can also like', style: Styles.textStyle16White),
             ),
           ],
         ),
-
         const AlsoLikeListView(),
-
-
       ],
     );
   }
 }
-
-
-
-
-
-
-
-
