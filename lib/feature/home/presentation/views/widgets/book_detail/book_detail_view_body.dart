@@ -17,7 +17,7 @@ class BookDetailViewBody extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.only(
-              left: kPrimaryPadding, right: kPrimaryPadding, top: 45),
+              left: kPrimaryPadding, right: kPrimaryPadding, ),
           child: CustomDetailViewAppBar(),
         ),
         Padding(
@@ -43,7 +43,7 @@ class BookDetailViewBody extends StatelessWidget {
           ],
         ),
 
-        AlsoLikeListView(),
+        const AlsoLikeListView(),
 
 
       ],
