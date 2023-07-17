@@ -21,7 +21,7 @@ class BuyContainer extends StatelessWidget {
               child: Text(
                 '19.99\$',
                 style: Styles.textStyle20
-                    .copyWith(color: Colors.black, fontWeight: FontWeight.normal),
+                    .copyWith(color: Colors.black , fontWeight: FontWeight.w900),
               )),
         ),
         Container(
