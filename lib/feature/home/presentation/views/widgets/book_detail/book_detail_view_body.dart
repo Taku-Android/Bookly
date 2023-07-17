@@ -4,7 +4,7 @@ import 'package:bookly/feature/home/presentation/views/widgets/book_detail/also_
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/book_detail_title.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/buy_container.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/custom_detail_view_app_bar.dart';
-import 'package:bookly/feature/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailViewBody extends StatelessWidget {
@@ -24,7 +24,7 @@ class BookDetailViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child: const CustomListViewItem(),
+            child: const CustomBookImage(),
           ),
         ),
         const BookDetailTitle(),
