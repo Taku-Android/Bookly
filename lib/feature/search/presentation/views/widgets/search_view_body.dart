@@ -9,51 +9,42 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-
-        CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30.0 , top: 10 , bottom: 15),
-                    child: GestureDetector(
-                        onTap: (){
-                          GoRouter.of(context).pop();
-                        },
-                        child: const Icon(Icons.close , size: 32,)),
-                  ) ,
-
-                   const CustomSearchTextField(),
-
-                   Padding(
-                     padding: const EdgeInsets.only(left: 30.0 , bottom: 15),
-                     child: Text('Results', style: Styles.textStyle30.copyWith(
-                       fontWeight: FontWeight.w700
-                     ),),
-                   ),
-                ],
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0, top: 10, bottom: 15),
+                child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).pop();
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      size: 32,
+                    )),
               ),
-            ),
-
-             const SliverToBoxAdapter(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: SearchListView(),
+              const CustomSearchTextField(),
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0, bottom: 15 , top: 15),
+                child: Text(
+                  'Search Results',
+                  style:
+                      Styles.textStyle20.copyWith(fontWeight: FontWeight.w700),
+                ),
               ),
-            )
-          ],
-        );
-
-
-
+            ],
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: SearchListView(),
+          ),
+        )
+      ],
+    );
   }
 }
-
-
-
-
-
