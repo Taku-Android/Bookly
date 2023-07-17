@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,9 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset(AssetsPaths.logo , width: 80, height: 80,),
           const Spacer(),
-          IconButton(onPressed: (){} , icon: const Icon(FontAwesomeIcons.magnifyingGlass , size: 24,))
+          IconButton(onPressed: (){
+            AppRoutes.router.push(AppRoutes.kSearchView);
+          } , icon: const Icon(FontAwesomeIcons.magnifyingGlass , size: 24,))
         ],
       ),
     );

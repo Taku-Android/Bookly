@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/Styles.dart';
 import 'package:bookly/core/utils/app_routes.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
               const Text(
                 'Read Free Books',
                 textAlign: TextAlign.center,
+                style: Styles.textStyle16White,
               )
             ],
           ),
