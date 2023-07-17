@@ -4,8 +4,8 @@ import 'package:bookly/feature/home/presentation/views/widgets/custom_small_imag
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListItem extends StatelessWidget {
-  const BestSellerListItem({super.key});
+class BookListItem extends StatelessWidget {
+  const BookListItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class BestSellerListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    'The Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Bookhe Jungle Book',
+                    'The Jungle Book',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.bookTitle,

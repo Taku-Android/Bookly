@@ -1,15 +1,16 @@
-import 'package:bookly/feature/home/presentation/views/widgets/book_list_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+import '../../../../home/presentation/views/widgets/book_list_item.dart';
+
+class SearchListView extends StatelessWidget {
+  const SearchListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        // when using custom scroll view
-        // u need to make that shrink wrap and not Expanded this to tell him take a space
-        // of your items
+      // when using custom scroll view
+      // u need to make that shrink wrap and not Expanded this to tell him take a space
+      // of your items
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         // and now u cant make it scroll and the custom also scroll so use physics
