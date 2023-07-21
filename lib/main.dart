@@ -1,15 +1,15 @@
 import 'package:bookly/constants.dart';
-import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/core/utils/app_routes.dart';
+import 'package:bookly/core/utils/service_locator.dart';
 import 'package:bookly/feature/home/data/repo/home_repo_impl.dart';
 import 'package:bookly/feature/home/presentation/manager/feature_books_cubit/feature_books_cubit.dart';
 import 'package:bookly/feature/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const BooklyApp());
 }
 
@@ -22,20 +22,12 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeatureBooksCubit(
-            HomeRepoImpl(
-              ApiService(
-                Dio(),
-              ),
-            ),
+            getIt.get<HomeRepoImpl>(),
           ),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
-            HomeRepoImpl(
-              ApiService(
-                Dio(),
-              ),
-            ),
+            getIt.get<HomeRepoImpl>(),
           ),
         ),
       ],
