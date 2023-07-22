@@ -1,5 +1,5 @@
 
-import '../../../data/model/BookModel.dart';
+import '../../../data/model/BooksModel.dart';
 
 abstract class NewestBooksState {}
 
@@ -9,7 +9,7 @@ class NewestBooksInitial extends NewestBooksState {}
 class NewestBooksLoading extends NewestBooksState {}
 class NewestBooksSuccess extends NewestBooksState {
 
-  final List<BookModel> books ;
+  final BooksModel books ;
 
   NewestBooksSuccess(this.books);
 

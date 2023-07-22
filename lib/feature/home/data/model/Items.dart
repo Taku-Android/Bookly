@@ -1,7 +1,6 @@
 import 'VolumeInfo.dart';
 import 'SaleInfo.dart';
 import 'AccessInfo.dart';
-import 'SearchInfo.dart';
 
 class Items {
   Items({
@@ -11,8 +10,7 @@ class Items {
       this.selfLink, 
       this.volumeInfo, 
       this.saleInfo, 
-      this.accessInfo, 
-      this.searchInfo,});
+      this.accessInfo,});
 
   Items.fromJson(dynamic json) {
     kind = json['kind'];
@@ -22,7 +20,6 @@ class Items {
     volumeInfo = json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
     saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
     accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
-    searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
   }
   String? kind;
   String? id;
@@ -31,7 +28,6 @@ class Items {
   VolumeInfo? volumeInfo;
   SaleInfo? saleInfo;
   AccessInfo? accessInfo;
-  SearchInfo? searchInfo;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -47,9 +43,6 @@ class Items {
     }
     if (accessInfo != null) {
       map['accessInfo'] = accessInfo?.toJson();
-    }
-    if (searchInfo != null) {
-      map['searchInfo'] = searchInfo?.toJson();
     }
     return map;
   }

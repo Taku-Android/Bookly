@@ -6,6 +6,7 @@ import 'ImageLinks.dart';
 class VolumeInfo {
   VolumeInfo({
       this.title, 
+      this.subtitle, 
       this.authors, 
       this.publisher, 
       this.publishedDate, 
@@ -27,6 +28,7 @@ class VolumeInfo {
 
   VolumeInfo.fromJson(dynamic json) {
     title = json['title'];
+    subtitle = json['subtitle'];
     authors = json['authors'] != null ? json['authors'].cast<String>() : [];
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
@@ -52,6 +54,7 @@ class VolumeInfo {
     canonicalVolumeLink = json['canonicalVolumeLink'];
   }
   String? title;
+  String? subtitle;
   List<String>? authors;
   String? publisher;
   String? publishedDate;
@@ -74,6 +77,7 @@ class VolumeInfo {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['title'] = title;
+    map['subtitle'] = subtitle;
     map['authors'] = authors;
     map['publisher'] = publisher;
     map['publishedDate'] = publishedDate;

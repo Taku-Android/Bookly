@@ -13,6 +13,7 @@ class FeaturedBooksListView extends StatelessWidget {
     return BlocBuilder<FeatureBooksCubit, FeatureBooksState>(
       builder: (context, state) {
         if(state is FeatureBooksSuccess){
+          var books = state.books.items ;
           return SizedBox(
             height: MediaQuery
                 .of(context)
@@ -20,10 +21,11 @@ class FeaturedBooksListView extends StatelessWidget {
                 .width * .55,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
+                itemCount: books!.length,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.only(right: 16.0),
-                    child: CustomBookImage(),
+                  return  Padding(
+                    padding: const EdgeInsets.only(right: 16.0),
+                    child: CustomBookImage(imageLink: books[index].volumeInfo!.imageLinks!.thumbnail!),
                   );
                 }),
           );

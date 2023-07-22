@@ -26,7 +26,7 @@ class BookDetailViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child: const CustomBookImage(),
+            child:  const CustomBookImage(imageLink: 'https://th.bing.com/th/id/R.a7d121142f24a1b1a0fb5fe95fe4ebe9?rik=kFQNoFAX9li8Cw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fZelda-Link-PNG-Picture.png&ehk=CyJSfRrJwjc%2fXmpVrzIIbrWnxD1Ne2kfgIx%2fqHO68q0%3d&risl=&pid=ImgRaw&r=0',),
           ),
         ),
         const BookDetailTitle(),

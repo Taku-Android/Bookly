@@ -1,5 +1,4 @@
-
-import '../../../data/model/BookModel.dart';
+import '../../../data/model/BooksModel.dart';
 
 abstract class FeatureBooksState {}
 
@@ -9,7 +8,7 @@ class FeatureBooksInitial extends FeatureBooksState {}
 class FeatureBooksLoading extends FeatureBooksState {}
 class FeatureBooksSuccess extends FeatureBooksState {
 
-  final List<BookModel> books ;
+  final BooksModel books ;
 
   FeatureBooksSuccess(this.books);
 
