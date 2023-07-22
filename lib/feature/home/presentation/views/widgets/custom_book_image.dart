@@ -11,13 +11,35 @@ class CustomBookImage extends StatelessWidget {
       aspectRatio: 3 / 4,
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.red,
             borderRadius: BorderRadius.circular(20),
-            image:  DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(imageLink),
-              //AssetImage(AssetsPaths.book1),
-            ),),
+            // image:  DecorationImage(
+            //   fit: BoxFit.fill,
+            //   image: NetworkImage(imageLink),
+            // )
+    ),
+        child: Image.network(
+          imageLink,
+          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) {
+              // Image is fully loaded
+              return child;
+            } else {
+              // Image is still loading, show the local placeholder image
+              return Image.asset(
+                'assets/images/loading.png',
+                fit: BoxFit.contain, // Adjust this property based on your needs
+              );
+            }
+          },
+          errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+            // Handle error case, show the local placeholder image or an error message
+            return Image.asset(
+              'assets/images/loading.png',
+              fit: BoxFit.contain,
+            );
+          },
+          fit: BoxFit.contain, // Adjust this property based on your needs
+        ),
       ),
     );
   }

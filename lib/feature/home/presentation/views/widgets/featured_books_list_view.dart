@@ -20,6 +20,7 @@ class FeaturedBooksListView extends StatelessWidget {
                 .size
                 .width * .55,
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: books!.length,
                 itemBuilder: (context, index) {
