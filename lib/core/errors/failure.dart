@@ -33,7 +33,7 @@ class ServerError extends Failure {
         return ServerError('Please check your internet connection');
 
       case DioExceptionType.unknown:
-        return ServerError('Something went wrong!!');
+        return ServerError('Please check your internet connection');
       default:
         return ServerError('Oops there was an Error  , Please try again or contact with us!');
     }
