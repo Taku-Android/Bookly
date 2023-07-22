@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/assets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,8 @@ class CustomBookImage extends StatelessWidget {
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: imageLink,
+          placeholder: (context , placeHolder) => Image.asset(AssetsPaths.loadingImage),
+          errorWidget: (context, errorImage, dynamic) => Image.asset(AssetsPaths.errorImage) ,
 
         )
       ),
