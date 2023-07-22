@@ -10,7 +10,7 @@ class AlsoLikeListItem extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0 , bottom: 20 , right: 10),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * .20,
-        child: const CustomSmallImage(),
+        child:  CustomSmallImage(imageUrl: '',),
       ),
     );
   }
