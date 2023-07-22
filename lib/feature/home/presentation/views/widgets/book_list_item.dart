@@ -8,12 +8,12 @@ import 'package:go_router/go_router.dart';
 class BookListItem extends StatelessWidget {
   const BookListItem({super.key, required this.book});
 
-  final Items book ;
+  final Items book;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRoutes.kBookDetail);
       },
       child: Padding(
@@ -21,10 +21,11 @@ class BookListItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-             SizedBox(
+            SizedBox(
                 width: 90,
-                child: CustomSmallImage(imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,)
-            ),
+                child: CustomSmallImage(
+                  imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                )),
             const SizedBox(
               width: 15,
             ),
@@ -33,45 +34,48 @@ class BookListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                   Text(
+                  Text(
                     book.volumeInfo!.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.bookTitle,
                   ),
                   const SizedBox(height: 8),
-                   Text(
+                  Text(
                     book.volumeInfo!.authors![0],
                     style: Styles.textStyle16,
-
                   ),
                   const SizedBox(height: 8),
                   Row(
                     children: [
                       const Text(
                         'Free',
-                        style:
-                        Styles.textStyle20,
+                        style: Styles.textStyle20,
                       ),
                       const Spacer(),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                          ),
-                          Text(
-                            '4.8',
-                            style: Styles.textStyle20,
-                          ),
-                          SizedBox(
-                            width: 9,
-                          ),
-                          Text(
-                            '(2390)',
-                            style: Styles.textStyle16,
-                          ),
-                        ],
+                      // Row(
+                      //   children:  [
+                      //     Icon(
+                      //       Icons.star,
+                      //       color: Colors.yellow,
+                      //     ),
+                      //     Text(
+                      //       book.volumeInfo!.maturityRating!,
+                      //       style: Styles.textStyle20,
+                      //     ),
+                      //     SizedBox(
+                      //       width: 9,
+                      //     ),
+                      //     Text(
+                      //       '(2390)',
+                      //       style: Styles.textStyle16,
+                      //     ),
+                      //   ],
+                      // ),
+
+                      Text(
+                        ' ${book.volumeInfo!.publishedDate!}',
+                        style: Styles.textStyle16White,
                       )
                     ],
                   )
