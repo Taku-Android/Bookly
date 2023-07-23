@@ -72,7 +72,6 @@ class BookListItem extends StatelessWidget {
                       //     ),
                       //   ],
                       // ),
-
                       Text(
                         ' ${book.volumeInfo!.publishedDate!}',
                         style: Styles.textStyle16White,
