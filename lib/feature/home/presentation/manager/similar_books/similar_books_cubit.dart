@@ -10,7 +10,7 @@ class SimilarBooksCubit extends Cubit<SimilarBooksState> {
 
   final HomeRepo homeRepo;
 
-  fetchNewestBooks() async {
+  fetchSimilarBooks() async {
     emit(SimilarBooksLoading());
     var result = await homeRepo.fetchNewSetBook();
 
