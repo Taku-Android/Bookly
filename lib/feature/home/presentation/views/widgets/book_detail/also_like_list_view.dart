@@ -18,7 +18,7 @@ class AlsoLikeListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 30.0),
               child: ListView.builder(
-                  itemCount: 20,
+                  itemCount: books.items!.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return  AlsoLikeListItem(imageUrl: books.items![index].volumeInfo!.imageLinks!.thumbnail!,);
@@ -28,9 +28,9 @@ class AlsoLikeListView extends StatelessWidget {
             ),
           );
         }else if(state is SimilarBooksFailure){
-          return CustomErrorWidget(errMessage: state.errMessage);
+          return Center(child: CustomErrorWidget(errMessage: state.errMessage));
         }else{
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
 
       },
