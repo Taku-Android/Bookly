@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/Styles.dart';
+import 'package:bookly/feature/home/data/model/Items.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/also_like_list_view.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/book_detail_title.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/buy_container.dart';
@@ -8,7 +9,9 @@ import 'package:bookly/feature/home/presentation/views/widgets/custom_book_image
 import 'package:flutter/material.dart';
 
 class BookDetailViewBody extends StatelessWidget {
-  const BookDetailViewBody({super.key});
+  const BookDetailViewBody({super.key, required this.book});
+
+  final Items book ;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +29,10 @@ class BookDetailViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child:  const CustomBookImage(imageLink: 'https://th.bing.com/th/id/R.a7d121142f24a1b1a0fb5fe95fe4ebe9?rik=kFQNoFAX9li8Cw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fZelda-Link-PNG-Picture.png&ehk=CyJSfRrJwjc%2fXmpVrzIIbrWnxD1Ne2kfgIx%2fqHO68q0%3d&risl=&pid=ImgRaw&r=0',),
+            child:  CustomBookImage(imageLink: book.volumeInfo!.imageLinks!.thumbnail!,),
           ),
         ),
-        const BookDetailTitle(),
+        BookDetailTitle(book: book),
         Padding(
           padding: const EdgeInsets.only(
             top: 30.0,
