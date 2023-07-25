@@ -24,7 +24,7 @@ class BuyContainer extends StatelessWidget {
                     bottomLeft: Radius.circular(20))),
             child: Center(
                 child: Text(
-                  '19.99\$',
+                  'Free',
                   style: Styles.textStyle20
                       .copyWith(color: Colors.black , fontWeight: FontWeight.w900),
                 )),

@@ -4,6 +4,9 @@ import 'package:bookly/feature/home/presentation/manager/similar_books/similar_b
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/also_like_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../../core/utils/app_routes.dart';
 
 class AlsoLikeListView extends StatelessWidget {
   const AlsoLikeListView({super.key});
@@ -13,15 +16,19 @@ class AlsoLikeListView extends StatelessWidget {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
       builder: (context, state) {
         if(state is SimilarBooksSuccess){
-          var books = state.books ;
+          var books = state.books.items ;
           return Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 30.0),
               child: ListView.builder(
-                  itemCount: books.items!.length,
+                  itemCount: books!.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return  AlsoLikeListItem(imageUrl: books.items![index].volumeInfo!.imageLinks!.thumbnail!,);
+                    return  GestureDetector(
+                        onTap: (){
+                          GoRouter.of(context).pushReplacement(AppRoutes.kBookDetail , extra: books[index]  );
+                        },
+                        child: AlsoLikeListItem(imageUrl: books[index].volumeInfo!.imageLinks!.thumbnail!,));
                   }
 
               ),
