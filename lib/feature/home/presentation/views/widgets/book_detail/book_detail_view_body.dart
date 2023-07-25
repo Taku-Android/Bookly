@@ -8,10 +8,19 @@ import 'package:bookly/feature/home/presentation/views/widgets/book_detail/custo
 import 'package:bookly/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
-class BookDetailViewBody extends StatelessWidget {
+class BookDetailViewBody extends StatefulWidget {
   const BookDetailViewBody({super.key, required this.book});
 
   final Items book ;
+
+  @override
+  State<BookDetailViewBody> createState() => _BookDetailViewBodyState();
+}
+
+class _BookDetailViewBodyState extends State<BookDetailViewBody> {
+
+  bool shimmerFreeON = false ;
+  bool shimmerPreviewON = true ;
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +38,23 @@ class BookDetailViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child:  CustomBookImage(imageLink: book.volumeInfo?.imageLinks?.thumbnail?? '',),
+            child:  CustomBookImage(imageLink: widget.book.volumeInfo?.imageLinks?.thumbnail?? '',),
           ),
         ),
-        BookDetailTitle(book: book),
+        BookDetailTitle(book: widget.book),
         Padding(
           padding: const EdgeInsets.only(
             top: 30.0,
           ),
           child: BuyContainer(
-            onPriceTap: () {},
-            onPreviewTap: () {},
+            onPriceTap: () {
+
+            },
+            onPreviewTap: () {
+
+            },
+            shimmerFreeOn: shimmerFreeON,
+            shimmerPreviewOn: shimmerPreviewON ,
           ),
         ),
         const SizedBox(
