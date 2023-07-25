@@ -28,7 +28,7 @@ class AlsoLikeListView extends StatelessWidget {
                         onTap: (){
                           GoRouter.of(context).pushReplacement(AppRoutes.kBookDetail , extra: books[index]  );
                         },
-                        child: AlsoLikeListItem(imageUrl: books[index].volumeInfo!.imageLinks!.thumbnail!,));
+                        child: AlsoLikeListItem(imageUrl: books[index].volumeInfo?.imageLinks?.thumbnail?? '',));
                   }
 
               ),

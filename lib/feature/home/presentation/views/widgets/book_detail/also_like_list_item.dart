@@ -4,7 +4,7 @@ import '../custom_small_image.dart';
 class AlsoLikeListItem extends StatelessWidget {
   const AlsoLikeListItem({super.key, required this.imageUrl});
 
-  final String  imageUrl ;
+  final String?  imageUrl ;
 
   @override
   Widget build(BuildContext context) {

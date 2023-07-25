@@ -24,7 +24,7 @@ class BookListItem extends StatelessWidget {
             SizedBox(
                 width: MediaQuery.of(context).size.width * .26,
                 child: CustomSmallImage(
-                  imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                  imageUrl: book.volumeInfo?.imageLinks?.thumbnail?? '',
                 )),
             const SizedBox(
               width: 15,
@@ -35,7 +35,7 @@ class BookListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    book.volumeInfo!.title!,
+                    book.volumeInfo?.title?? 'No Title',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.bookTitle,
@@ -73,7 +73,7 @@ class BookListItem extends StatelessWidget {
                       //   ],
                       // ),
                       Text(
-                        ' ${book.volumeInfo!.publishedDate!}',
+                        ' ${book.volumeInfo?.publishedDate?? '1999'}',
                         style: Styles.textStyle16White,
                       )
                     ],

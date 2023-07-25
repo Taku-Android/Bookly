@@ -16,7 +16,7 @@ class HomeRepoImpl extends HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?q=subject:education&Filtering=free-ebooks&Sorting=newest');
+              'volumes?q=subject:computer science&Filtering=free-ebooks&Sorting=newest');
 
 
      return right(data);
@@ -60,7 +60,7 @@ class HomeRepoImpl extends HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-          'volumes?q=subject:education&Filtering=free-ebooks&Sorting=relevance');
+          'volumes?q=subject:computer science&Filtering=free-ebooks&Sorting=relevance');
       return right(data);
     } catch (e) {
       if (e is DioException) {

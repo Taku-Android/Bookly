@@ -7,7 +7,7 @@ class CustomSmallImage extends StatelessWidget {
     super.key, required this.imageUrl,
   });
 
-  final String imageUrl ;
+  final String? imageUrl ;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CustomSmallImage extends StatelessWidget {
         aspectRatio: 2 / 3,
         child: CachedNetworkImage(
           fit: BoxFit.fill,
-          imageUrl: imageUrl,
+          imageUrl: imageUrl?? '',
           errorWidget: (context, errorImage, dynamic) => Image.asset(AssetsPaths.errorImage) ,
           placeholder: (context, placeHolder) =>  Image.asset(AssetsPaths.loadingImage)  ,
         ),
