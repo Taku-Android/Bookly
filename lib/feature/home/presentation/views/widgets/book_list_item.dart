@@ -1,9 +1,10 @@
 import 'package:bookly/core/utils/Styles.dart';
 import 'package:bookly/core/utils/app_routes.dart';
-import 'package:bookly/feature/home/data/model/Items.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/custom_small_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../core/model/Items.dart';
 
 class BookListItem extends StatelessWidget {
   const BookListItem({super.key, required this.book});

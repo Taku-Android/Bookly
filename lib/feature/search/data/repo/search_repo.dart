@@ -2,7 +2,8 @@
 import 'package:bookly/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../../home/data/model/BooksModel.dart';
+import '../../../../core/model/BooksModel.dart';
+
 
 abstract class SearchRepo{
 

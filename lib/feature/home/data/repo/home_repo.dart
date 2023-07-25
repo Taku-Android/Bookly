@@ -1,6 +1,7 @@
 import 'package:bookly/core/errors/failure.dart';
-import 'package:bookly/feature/home/data/model/BooksModel.dart';
 import 'package:dartz/dartz.dart';
+
+import '../../../../core/model/BooksModel.dart';
 
 abstract class HomeRepo {
   Future<Either<Failure, BooksModel>> fetchNewSetBook();

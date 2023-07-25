@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/Styles.dart';
-import 'package:bookly/feature/home/data/model/Items.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../../core/model/Items.dart';
 
 class BookDetailTitle extends StatelessWidget {
   const BookDetailTitle({super.key, required this.book});

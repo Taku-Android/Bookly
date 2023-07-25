@@ -1,5 +1,4 @@
 import 'package:bookly/core/utils/service_locator.dart';
-import 'package:bookly/feature/home/data/model/Items.dart';
 import 'package:bookly/feature/home/presentation/views/book_detail_view.dart';
 import 'package:bookly/feature/home/presentation/views/home_view.dart';
 import 'package:bookly/feature/search/presentation/views/search_view.dart';
@@ -9,6 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../feature/home/data/repo/home_repo_impl.dart';
 import '../../feature/home/presentation/manager/similar_books/similar_books_cubit.dart';
+import '../model/Items.dart';
 
 abstract class AppRoutes {
 

@@ -1,5 +1,6 @@
-import 'package:bookly/feature/home/data/model/BooksModel.dart';
 import 'package:dio/dio.dart';
+
+import '../model/BooksModel.dart';
 
 class ApiService{
 
