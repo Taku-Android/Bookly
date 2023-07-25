@@ -7,20 +7,12 @@ import 'package:bookly/feature/home/presentation/views/widgets/book_detail/buy_c
 import 'package:bookly/feature/home/presentation/views/widgets/book_detail/custom_detail_view_app_bar.dart';
 import 'package:bookly/feature/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class BookDetailViewBody extends StatefulWidget {
+class BookDetailViewBody extends StatelessWidget {
   const BookDetailViewBody({super.key, required this.book});
 
   final Items book ;
-
-  @override
-  State<BookDetailViewBody> createState() => _BookDetailViewBodyState();
-}
-
-class _BookDetailViewBodyState extends State<BookDetailViewBody> {
-
-  bool shimmerFreeON = false ;
-  bool shimmerPreviewON = true ;
 
   @override
   Widget build(BuildContext context) {
@@ -38,23 +30,20 @@ class _BookDetailViewBodyState extends State<BookDetailViewBody> {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .50,
-            child:  CustomBookImage(imageLink: widget.book.volumeInfo?.imageLinks?.thumbnail?? '',),
+            child:  CustomBookImage(imageLink: book.volumeInfo?.imageLinks?.thumbnail?? '',),
           ),
         ),
-        BookDetailTitle(book: widget.book),
+        BookDetailTitle(book: book),
         Padding(
           padding: const EdgeInsets.only(
             top: 30.0,
           ),
           child: BuyContainer(
-            onPriceTap: () {
-
-            },
+            onPriceTap: () {},
             onPreviewTap: () {
-
-            },
-            shimmerFreeOn: shimmerFreeON,
-            shimmerPreviewOn: shimmerPreviewON ,
+              final Uri url = Uri.parse(book.volumeInfo?.previewLink?? '');
+              _launchUrl(url);
+              },
           ),
         ),
         const SizedBox(
@@ -72,5 +61,13 @@ class _BookDetailViewBodyState extends State<BookDetailViewBody> {
         const AlsoLikeListView(),
       ],
     );
+  }
+
+  Future<void> _launchUrl(url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    }else{
+      throw Exception('Could not launch $url');
+    }
   }
 }
