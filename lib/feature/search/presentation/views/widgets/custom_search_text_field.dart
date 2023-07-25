@@ -1,23 +1,33 @@
+import 'package:bookly/feature/search/presentation/manager/cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({super.key,  this.onPressed});
+class CustomSearchTextField extends StatefulWidget {
+  const CustomSearchTextField({super.key});
 
+  @override
+  State<CustomSearchTextField> createState() => _CustomSearchTextFieldState();
+}
 
-  final void Function()? onPressed;
+class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
+
+  TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 16),
       child: TextField(
+        controller: searchController ,
           decoration: InputDecoration(
               enabledBorder: buildOutlineInputBorder(),
               focusedBorder: buildOutlineInputBorder(),
-              hintText: 'Search',
+              hintText: 'Search by category',
               suffixIcon: IconButton(
-                  onPressed: onPressed,
+                  onPressed: (){
+                    search();
+                  },
                   icon: const Icon(
                     FontAwesomeIcons.magnifyingGlass,
                     size: 24,
@@ -33,4 +43,15 @@ class CustomSearchTextField extends StatelessWidget {
         )
     );
   }
+
+  search(){
+
+    if(searchController.text.isEmpty){
+      return ;
+    }
+
+    BlocProvider.of<SearchCubit>(context).searchByCategory(searchController.text);
+
+  }
+
 }
