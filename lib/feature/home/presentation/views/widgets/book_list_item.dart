@@ -9,7 +9,7 @@ import '../../../../../core/model/Items.dart';
 class BookListItem extends StatelessWidget {
   const BookListItem({super.key, required this.book});
 
-  final Items book;
+  final Items? book;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class BookListItem extends StatelessWidget {
             SizedBox(
                 width: MediaQuery.of(context).size.width * .26,
                 child: CustomSmallImage(
-                  imageUrl: book.volumeInfo?.imageLinks?.thumbnail?? '',
+                  imageUrl: book?.volumeInfo?.imageLinks?.thumbnail?? '',
                 )),
             const SizedBox(
               width: 15,
@@ -36,14 +36,14 @@ class BookListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    book.volumeInfo?.title?? 'No Title',
+                    book?.volumeInfo?.title?? 'No Title',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.bookTitle,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    book.volumeInfo!.authors![0],
+                    book?.volumeInfo?.authors?[0]?? '',
                     style: Styles.textStyle16,
                   ),
                   const SizedBox(height: 8),
@@ -74,7 +74,7 @@ class BookListItem extends StatelessWidget {
                       //   ],
                       // ),
                       Text(
-                        ' ${book.volumeInfo?.publishedDate?? '1999'}',
+                        ' ${book?.volumeInfo?.publishedDate?? '1999'}',
                         style: Styles.textStyle16White,
                       )
                     ],

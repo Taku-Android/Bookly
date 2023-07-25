@@ -16,7 +16,7 @@ class SearchRepoImpl extends SearchRepo {
     try {
       var result = await apiService.get(
           endPoint:
-              'volumes?q=subject:$subject&Filtering=free-ebooks&Sorting=newest');
+              'volumes?q=subject:$subject&Filtering=free-ebooks');
 
       return right(result);
     } catch (e) {

@@ -50,7 +50,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
       return ;
     }
 
-    BlocProvider.of<SearchCubit>(context).searchByCategory(searchController.text);
+    BlocProvider.of<SearchCubit>(context).searchByCategory(searchController.text.trim());
 
   }
 
