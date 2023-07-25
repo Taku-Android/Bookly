@@ -10,12 +10,14 @@ class BookDetailTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
          Text(
           book.volumeInfo!.title!,
+          textAlign: TextAlign.center,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: Styles.textStyle30,
+          style: Styles.textStyle26,
         ),
         const SizedBox(height: 4),
          Text(

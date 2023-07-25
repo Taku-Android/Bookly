@@ -22,7 +22,7 @@ class BookListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-                width: 90,
+                width: MediaQuery.of(context).size.width * .26,
                 child: CustomSmallImage(
                   imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
                 )),
